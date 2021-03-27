@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
     try:
         from pandas import DataFrame
-        print DataFrame(stats)
+        print(DataFrame(stats))
     except ImportError:
         import json
-        print json.dumps(stats, indent=2)
+        print(json.dumps(stats, indent=2))
