@@ -36,10 +36,10 @@ def bbox_to_pixel_offsets(gt, bbox):
     return (x1, y1, xsize, ysize)
 
 
-def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=False):
+def zonal_stats(vector_path, raster_path, band, nodata_value=None, global_src_extent=False):
     rds = gdal.Open(raster_path, GA_ReadOnly)
     assert(rds)
-    rb = rds.GetRasterBand(1)
+    rb = rds.GetRasterBand(band)
     rgt = rds.GetGeoTransform()
 
     if nodata_value:
